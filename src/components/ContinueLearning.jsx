@@ -1,12 +1,12 @@
 import { courses } from "../data/courses";
 
-function ContinueLearning() {
+function ContinueLearning({ onViewDetails }) {
   const inProgressCourses = courses.filter(
     (course) => course.status === "In Progress"
   );
 
   return (
-    <section className="max-w-7xl mx-auto px-6 py-12">
+    <section id="learning" className="max-w-7xl mx-auto px-6 py-12 scroll-mt-24">
 
       <h2 className="text-3xl font-bold mb-8">
         Continue Learning
@@ -57,9 +57,22 @@ function ContinueLearning() {
 
               </div>
 
-              <button className="mt-6 w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition">
-                Continue
-              </button>
+              <div className="mt-6 grid grid-cols-2 gap-3">
+                <button
+                  type="button"
+                  onClick={() => onViewDetails(course)}
+                  className="rounded-lg bg-green-600 py-2 text-white transition hover:bg-green-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600 active:scale-95"
+                >
+                  Continue
+                </button>
+                <button
+                  type="button"
+                  onClick={() => onViewDetails(course)}
+                  className="rounded-lg border border-slate-300 py-2 font-medium text-slate-700 transition hover:bg-slate-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 active:scale-95"
+                >
+                  Details
+                </button>
+              </div>
 
             </div>
 

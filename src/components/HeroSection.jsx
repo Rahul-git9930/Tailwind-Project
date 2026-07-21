@@ -1,4 +1,4 @@
-function HeroSection() {
+function HeroSection({ onExplore }) {
   return (
     <section className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-700 text-white">
 
@@ -17,7 +17,7 @@ function HeroSection() {
             building successful careers.
           </p>
 
-          <button className="mt-8 bg-white text-blue-700 px-8 py-3 rounded-lg font-semibold hover:scale-105 transition duration-300">
+          <button type="button" onClick={onExplore} className="mt-8 rounded-lg bg-white px-8 py-3 font-semibold text-blue-700 transition hover:scale-105 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white active:scale-95">
             Explore Courses
           </button>
 

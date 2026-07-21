@@ -4,7 +4,7 @@ import CourseCard from "./CourseCard";
 import SearchBar from "./SearchBar";
 import CategoryFilter from "./CategoryFilter";
 
-function CourseGrid() {
+function CourseGrid({ onViewDetails }) {
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("All");
 
@@ -20,7 +20,7 @@ function CourseGrid() {
   });
 
   return (
-    <section className="max-w-7xl mx-auto px-6 py-12">
+    <section id="courses" className="max-w-7xl mx-auto px-6 py-12 scroll-mt-24">
       <h2 className="text-3xl font-bold mb-6">
         Explore Courses
       </h2>
@@ -42,6 +42,7 @@ function CourseGrid() {
             <CourseCard
               key={course.id}
               course={course}
+              onViewDetails={onViewDetails}
             />
           ))
         ) : (

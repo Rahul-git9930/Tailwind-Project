@@ -1,4 +1,4 @@
-function CourseCard({ course }) {
+function CourseCard({ course, onViewDetails }) {
   const statusStyles = {
     Completed: "bg-green-100 text-green-700",
     "In Progress": "bg-yellow-100 text-yellow-700",
@@ -62,10 +62,22 @@ function CourseCard({ course }) {
 
         </div>
 
-        {/* Button */}
-        <button className="mt-6 w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-3 rounded-xl font-semibold hover:scale-105 transition duration-300">
-          Continue Learning
-        </button>
+        <div className="mt-6 grid grid-cols-2 gap-3">
+          <button
+            type="button"
+            onClick={() => onViewDetails(course)}
+            className="rounded-xl border border-blue-200 px-3 py-3 font-semibold text-blue-700 transition hover:bg-blue-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 active:scale-95"
+          >
+            View Details
+          </button>
+          <button
+            type="button"
+            onClick={() => onViewDetails(course)}
+            className="rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 px-3 py-3 font-semibold text-white transition hover:brightness-110 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 active:scale-95"
+          >
+            Continue
+          </button>
+        </div>
 
       </div>
 
